@@ -4,58 +4,75 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- ✅ SEO оптимизирани тагове -->
-  <title>PTG Engineering | Електроинсталации и Автоматизация на Системи – Варна</title>
-  <meta name="description" content="PTG Engineering – проектиране и изграждане на промишлени, корабни, офисни и жилищни електроинсталации. Изработка на електрически табла, системи за управление и автоматизация. Варна, България.">
-  <meta name="keywords" content="електроинсталации Варна, електрически табла, автоматизация, PTG Engineering, проектиране, контролни табла, промишлени инсталации, корабни инсталации">
+  <!-- Canonical + robots -->
+  <link rel="canonical" href="https://ptg-engineering.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1220" />
 
-  <!-- Icons -->
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <!-- ✅ SEO оптимизирани тагове (i18n-aware) -->
+  <title data-i18n-head="title">PTG Engineering | Електроинсталации и Автоматизация на Системи – Варна</title>
+  <meta name="description" data-i18n-head="description" content="PTG Engineering – проектиране и изграждане на промишлени, корабни, офисни и жилищни електроинсталации. Изработка на електрически табла, системи за управление и автоматизация. Варна, България.">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/icon-192.png">
-
-   <!-- Social cards -->
+  <!-- Open Graph / Twitter (i18n-aware titles/descriptions) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="PTG Engineering | Електроинсталации и Автоматизация на Системи – Варна">
-  <meta property="og:description" content="PTG Engineering – професионални електроинсталации, контролни табла и системи за автоматизация.">
+  <meta property="og:url" content="https://ptg-engineering.com/">
+  <meta property="og:title" data-i18n-head="og_title" content="PTG Engineering | Електроинсталации и Автоматизация на Системи – Варна">
+  <meta property="og:description" data-i18n-head="og_description" content="PTG Engineering – професионални електроинсталации, контролни табла и системи за автоматизация.">
   <meta property="og:image" content="https://ptg-engineering.com/logo.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- ✅ Structured data (Organization schema) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://ptg-engineering.com/#org",
-  "name": "PTG Engineering Ltd.",
-  "url": "https://ptg-engineering.com/",
-  "logo": {
-    "@type": "ImageObject",
-    "url": "https://ptg-engineering.com/icon-512.png",
-    "width": 512,
-    "height": 512
-  },
-  "email": "office@ptg-engineering.com",
-  "telephone": "+359895292638",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Varna",
-    "addressCountry": "BG"
+  <!-- Hreflang alternates -->
+  <link rel="alternate" hreflang="bg" href="https://ptg-engineering.com/" />
+  <link rel="alternate" hreflang="en" href="https://ptg-engineering.com/en" />
+  <link rel="alternate" hreflang="x-default" href="https://ptg-engineering.com/" />
+
+  <!-- Favicons (deduplicated) -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Preconnects for flags & maps (perf hint) -->
+  <link rel="preconnect" href="https://flagcdn.com" crossorigin>
+  <link rel="preconnect" href="https://maps.googleapis.com" crossorigin>
+
+  <!-- ✅ Structured data (single, enriched Organization schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://ptg-engineering.com/#org",
+    "name": "PTG Engineering Ltd.",
+    "alternateName": "Пи Ти Джи Инженеринг ООД",
+    "url": "https://ptg-engineering.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ptg-engineering.com/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "email": "office@ptg-engineering.com",
+    "telephone": "+359895292638",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Varna",
+      "addressCountry": "BG"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Bulgaria"
+    },
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "office@ptg-engineering.com",
+      "telephone": "+359895292638",
+      "areaServed": "BG",
+      "availableLanguage": ["bg", "en"]
+    }]
   }
-}
-</script>
-
-</head>
-
+  </script>
 
   <style>
     :root{
@@ -91,6 +108,10 @@
                   radial-gradient(1200px 800px at 120% 10%, var(--bg2), transparent),
                   linear-gradient(180deg, var(--bg1), var(--bg2));
     }
+
+    /* Skip link for accessibility */
+    .skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+    .skip-link:focus{left:16px; top:16px; width:auto; height:auto; padding:8px 12px; background:#000; color:#fff; border-radius:8px}
 
     /* Shell */
     .wrap{max-width:1100px; margin:0 auto; padding:clamp(16px,3vw,32px)}
@@ -165,10 +186,12 @@
   </style>
 </head>
 <body>
-  <div class="nav">
-    <div class="wrap nav-inner" role="navigation" aria-label="Основна навигация">
+  <a class="skip-link" href="#main">Прескочи към съдържанието</a>
+
+  <div class="nav" role="navigation" aria-label="Основна навигация">
+    <div class="wrap nav-inner">
       <div class="brand">
-        <img class="logo" src="logo.png" alt="Лого на PTG Engineering" loading="lazy" decoding="async" />
+        <img class="logo" src="/logo.png" alt="Лого на PTG Engineering" loading="lazy" decoding="async" fetchpriority="high" />
         <div class="title" data-i18n="company_name">Пи Ти Джи Инженеринг ООД</div>
       </div>
       <div class="nav-links">
@@ -185,11 +208,11 @@
 
   <header class="wrap hero" role="banner">
     <div>
-      <div class="badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7z" stroke="currentColor"/></svg><span data-i18n="hero_badge">Електроинженеринг и автоматизация</span></div>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7z" stroke="currentColor"/></svg><span data-i18n="hero_badge">Електроинженеринг и автоматизация</span></div>
       <h1 class="h1" data-i18n="hero_title">Електроинсталации, главни табла и автоматизация за индустрията</h1>
       <p class="lead" data-i18n="hero_lead">Проектиране, изработка и пуск в експлоатация – от идея до работещо решение. Работим в промишлени и административни обекти из цяла България.</p>
       <div class="cta">
-        <a class="btn btn-primary" href="mailto:office@ptg-engineering.com?subject=Запитване" data-i18n="cta_quote">Заяви оферта</a>
+        <a class="btn btn-primary" href="mailto:office@ptg-engineering.com?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%82%D0%B2%D0%B0%D0%BD%D0%B5" data-i18n="cta_quote">Заяви оферта</a>
         <a class="btn" href="#services" data-i18n="cta_services">Виж услугите</a>
       </div>
     </div>
@@ -203,7 +226,7 @@
     </div>
   </header>
 
-  <main class="wrap" role="main">
+  <main id="main" class="wrap" role="main">
     <!-- Services -->
     <section id="services" class="section" aria-labelledby="services-title">
       <h2 id="services-title" data-i18n="do_title">Какво правим</h2>
@@ -247,11 +270,11 @@
           <p>📧 <a href="mailto:office@ptg-engineering.com">office@ptg-engineering.com</a></p>
           <p>📞 <a href="tel:+359895292638" aria-label="Обадете се на +359 895 292 638">+359 895 292 638</a></p>
           <p data-i18n="address">📍 Варна, България</p>
-          <div class="cta"><a class="btn btn-primary" href="mailto:office@ptg-engineering.com?subject=Запитване" data-i18n="cta_quote">Заяви оферта</a></div>
+          <div class="cta"><a class="btn btn-primary" href="mailto:office@ptg-engineering.com?subject=%D0%97%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0%20%D0%B7%D0%B0%20%D0%BE%D1%84%D0%B5%D1%80%D1%82%D0%B0" data-i18n="cta_quote">Заяви оферта</a></div>
         </div>
         <div class="card">
           <p class="muted" data-i18n="contact_note">Работим в цяла България. Свържете се за оглед на обекта и оферта.</p>
-          <iframe title="Map" aria-label="Карта" style="width:100%; height:220px; border:0; border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1463.0!2d27.916!3d43.214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a454!2zVmFybmE!5e0!3m2!1sen!2sbg!4v0000"></iframe>
+          <iframe title="Map" aria-label="Карта" style="width:100%; height:220px; border:0; border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1463.0!2d27.916!3d43.214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a454!2zVmFybmE!5e0!3m2!1sen!2sbg"></iframe>
         </div>
       </div>
     </section>
@@ -264,10 +287,10 @@
       // i18n dictionary (no trailing commas for wider browser support)
       var dict = {
         bg: {
-          title: 'Пи Ти Джи Инженеринг ООД',
-          description: 'Пи Ти Джи Инженеринг ООД – електроинженеринг и автоматизация.',
-          og_title: 'Пи Ти Джи Инженеринг ООД',
-          og_description: 'Електроинженеринг и автоматизация.',
+          title: 'PTG Engineering | Електроинсталации и Автоматизация на Системи – Варна',
+          description: 'PTG Engineering – проектиране и изграждане на промишлени, корабни, офисни и жилищни електроинсталации. Изработка на електрически табла, системи за управление и автоматизация. Варна, България.',
+          og_title: 'PTG Engineering | Електроинсталации и Автоматизация на Системи – Варна',
+          og_description: 'PTG Engineering – професионални електроинсталации, контролни табла и системи за автоматизация.',
           company_name: 'Пи Ти Джи Инженеринг ООД',
           nav_services: 'Услуги',
           nav_process: 'Процес',
@@ -320,10 +343,10 @@
           contact_note: 'Работим в цяла България. Свържете се за оглед на обекта и оферта.'
         },
         en: {
-          title: 'PTG Engineering Ltd.',
-          description: 'PTG Engineering Ltd. – electrical engineering & automation.',
-          og_title: 'PTG Engineering Ltd.',
-          og_description: 'Electrical engineering & automation.',
+          title: 'PTG Engineering | Electrical Installations & Automation – Varna',
+          description: 'PTG Engineering – design and construction of industrial, marine, office and residential electrical installations. Switchboards, control systems and automation. Varna, Bulgaria.',
+          og_title: 'PTG Engineering | Electrical Installations & Automation – Varna',
+          og_description: 'PTG Engineering – professional electrical installations, control panels and automation systems.',
           company_name: 'PTG Engineering Ltd.',
           nav_services: 'Services',
           nav_process: 'Process',
@@ -377,7 +400,7 @@
         }
       };
 
-      var els = document.querySelectorAll('[data-i18n]');
+      var textEls = document.querySelectorAll('[data-i18n]');
       var headEls = document.querySelectorAll('[data-i18n-head]');
       var toggle = document.getElementById('langToggle');
       var flagIcon = document.getElementById('flagIcon');
@@ -385,9 +408,7 @@
 
       var PREF_KEY = 'ptg-lang';
       var current;
-      try {
-        current = localStorage.getItem(PREF_KEY);
-      } catch(e) { current = null; }
+      try { current = localStorage.getItem(PREF_KEY); } catch(e) { current = null; }
       if (!current) {
         var navLang = (navigator.language || '').toLowerCase();
         current = navLang.indexOf('bg') === 0 ? 'bg' : 'en';
@@ -406,8 +427,8 @@
       }
 
       function apply(lang){
-        for (var i=0; i<els.length; i++){
-          var el = els[i];
+        for (var i=0; i<textEls.length; i++){
+          var el = textEls[i];
           var key = el.getAttribute('data-i18n');
           var val = dict[lang][key];
           if (typeof val === 'string') el.textContent = val;
@@ -438,25 +459,8 @@
     })();
   </script>
 
-  <!-- Structured data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "PTG Engineering Ltd.",
-    "alternateName": "Пи Ти Джи Инженеринг ООД",
-    "url": "https://ptg-engineering.com",
-    "logo": "https://ptg-engineering.com/logo.png",
-    "email": "office@ptg-engineering.com",
-    "telephone": "+359895292638",
-    "address": {"@type": "PostalAddress","addressLocality": "Varna","addressCountry": "BG"}
-  }
-  </script>
+  <noscript>
+    <style>.lang{display:none!important}</style>
+  </noscript>
 </body>
 </html>
-
-
-
-
-
-
