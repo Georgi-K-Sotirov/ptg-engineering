@@ -1,0 +1,45 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.site-header {
+    position: relative;
+    /* TODO: Replace with your header background image */
+    background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    z-index: 1; /* Ensure header is above other content but allows overlay */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    z-index: -1;
+    transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+}
+
+.site-header.scrolled::before {
+    background-color: rgba(255, 255, 255, 1);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+nav a.active {
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+#mobile-menu a.active {
+    color: #3b82f6;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.lang-switcher-btn.active {
+    color: #3b82f6;
+    font-weight: 700;
+}
