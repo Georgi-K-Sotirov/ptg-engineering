@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n-head="title">Пи Ти Джи Инженеринг ООД</title>
+  <meta name="description" data-i18n-head="description" content="Пи Ти Джи Инженеринг ООД – електроинсталации, контролни табла, главни разпределителни табла." />
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Social cards -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" data-i18n-head="og_title" content="Пи Ти Джи Инженеринг ООД" />
+  <meta property="og:description" data-i18n-head="og_description" content="Електроинженеринг и автоматизация." />
+  <meta property="og:image" content="/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root{
+      --bg1:#0b1220; --bg2:#0f1b2d; --bg3:rgba(255,255,255,.06);
+      --card:rgba(255,255,255,0.08);
+      --border:rgba(255,255,255,0.12);
+      --text:#e5e7eb; --muted:#a1a1aa;
+      --accent-start:#60a5fa; --accent-end:#3b82f6; /* blue */
+      --accent-2:#22d3ee; /* cyan */
+      --ring:#60a5fa;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg1:#f8fafc; --bg2:#eef2f7; --bg3:rgba(0,0,0,.04);
+        --card:rgba(255,255,255,0.9);
+        --border:#e5e7eb;
+        --text:#111827; --muted:#6b7280;
+        --accent-start:#2681bc; --accent-end:#2a4d89;
+        --accent-2:#06b6d4;
+        --ring:#3b82f6;
+        --shadow:0 10px 24px rgba(0,0,0,.08);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+      color:var(--text); line-height:1.6;
+      background: radial-gradient(1200px 800px at 20% -10%, var(--bg2), transparent),
+                  radial-gradient(1200px 800px at 120% 10%, var(--bg2), transparent),
+                  linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+
+    /* Shell */
+    .wrap{max-width:1100px; margin:0 auto; padding:clamp(16px,3vw,32px)}
+
+    /* Top nav */
+    .nav{position:sticky; top:0; z-index:20; backdrop-filter:saturate(160%) blur(8px); background:linear-gradient(90deg, rgba(0,0,0,.0), rgba(0,0,0,.04)); border-bottom:1px solid var(--border)}
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 0}
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{height:42px; width:auto; border-radius:10px}
+    .title{font-size:clamp(16px,2.2vw,22px); font-weight:800; letter-spacing:.4px; text-transform:uppercase; background:linear-gradient(90deg,var(--accent-start),var(--accent-2),var(--accent-end)); -webkit-background-clip:text; background-clip:text; color:transparent}
+
+    .nav-links{display:flex; gap:14px; align-items:center}
+    .nav-links a{font-weight:600; text-decoration:none; color:inherit; opacity:.85}
+    .nav-links a:hover{opacity:1}
+
+    .lang{display:inline-flex; align-items:center; gap:8px; background:linear-gradient(90deg,var(--accent-start),var(--accent-end)); border:none; color:white; padding:10px 14px; border-radius:999px; cursor:pointer; font-weight:700; transition:transform .2s ease, opacity .2s ease}
+    .lang:focus-visible{outline:3px solid var(--ring); outline-offset:3px}
+    .lang:hover{opacity:.95; transform:translateY(-1px)}
+    .lang img{width:20px; height:20px; border-radius:50%}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:24px; align-items:center; padding:clamp(24px,6vw,64px) 0}
+    .badge{display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); padding:6px 10px; border-radius:999px; background:var(--card)}
+    .badge svg{width:16px; height:16px}
+    .h1{font-size:clamp(28px,5vw,44px); margin:.4em 0 .25em 0; line-height:1.15}
+    .lead{font-size:clamp(16px,2.2vw,18px); color:var(--muted)}
+    .cta{display:flex; gap:12px; margin-top:18px}
+    .btn{display:inline-flex; align-items:center; gap:8px; padding:12px 16px; border-radius:12px; font-weight:700; text-decoration:none; border:1px solid var(--border); background:var(--card); box-shadow:var(--shadow)}
+    .btn-primary{background:linear-gradient(90deg,var(--accent-start),var(--accent-end)); color:white; border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+
+    .hero-card{background:var(--card); border:1px solid var(--border); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px}
+    .hero-kpi{background:linear-gradient(180deg, var(--bg3), transparent); border:1px solid var(--border); border-radius:14px; padding:14px}
+    .kpi-title{font-size:12px; color:var(--muted)}
+    .kpi-value{font-size:22px; font-weight:800}
+
+    @media (max-width:860px){
+      .hero{grid-template-columns:1fr}
+    }
+
+    /* Sections */
+    .section{margin:clamp(20px,5vw,60px) 0}
+    .section h2{font-size:clamp(20px,3vw,26px); margin:0 0 10px 0; background:linear-gradient(90deg,var(--accent-start),var(--accent-end)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .muted{color:var(--muted)}
+
+    /* Services grid */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    @media (max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:620px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:16px; box-shadow:var(--shadow); transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px)}
+    .icon{width:26px; height:26px}
+
+    /* Steps */
+    .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    @media (max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:520px){.steps{grid-template-columns:1fr}}
+    .step{background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px}
+    .step .num{width:28px; height:28px; border-radius:50%; display:inline-grid; place-items:center; background:linear-gradient(90deg,var(--accent-start),var(--accent-end)); color:white; font-weight:800; margin-bottom:8px}
+
+    /* Contact */
+    .contact{display:grid; grid-template-columns:1.2fr .8fr; gap:16px}
+    @media (max-width:860px){.contact{grid-template-columns:1fr}}
+
+    footer{margin:28px 0 10px 0; text-align:center; color:var(--muted); font-size:14px}
+    a{color:inherit}
+    a:focus-visible{outline:3px solid var(--ring); outline-offset:3px; border-radius:8px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+    @media (prefers-reduced-motion: reduce){ *{transition:none!important; animation:none!important} }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="wrap nav-inner" role="navigation" aria-label="Основна навигация">
+      <div class="brand">
+        <img class="logo" src="logo.png" alt="Лого на PTG Engineering" loading="lazy" decoding="async" />
+        <div class="title" data-i18n="company_name">Пи Ти Джи Инженеринг ООД</div>
+      </div>
+      <div class="nav-links">
+        <a href="#services" data-i18n="nav_services">Услуги</a>
+        <a href="#process" data-i18n="nav_process">Процес</a>
+        <a href="#contact" data-i18n="nav_contact">Контакти</a>
+        <button id="langToggle" class="lang" type="button" aria-pressed="false" aria-label="Смяна на езика">
+          <img id="flagIcon" src="https://flagcdn.com/w20/bg.png" alt="Българско знаме" />
+          <span id="langLabel">BG</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <header class="wrap hero" role="banner">
+    <div>
+      <div class="badge"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7l3-7z" stroke="currentColor"/></svg><span data-i18n="hero_badge">Електроинженеринг и автоматизация</span></div>
+      <h1 class="h1" data-i18n="hero_title">Електроинсталации, главни табла и автоматизация за индустрията</h1>
+      <p class="lead" data-i18n="hero_lead">Проектиране, изработка и пуск в експлоатация – от идея до работещо решение. Работим в промишлени и административни обекти из цяла България.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:office@ptg-engineering.com?subject=Запитване" data-i18n="cta_quote">Заяви оферта</a>
+        <a class="btn" href="#services" data-i18n="cta_services">Виж услугите</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-hidden="true">
+      <div class="hero-grid">
+        <div class="hero-kpi"><div class="kpi-title" data-i18n="kpi_1_title">Работа под напрежение</div><div class="kpi-value" data-i18n="kpi_1">0 инцидента</div></div>
+        <div class="hero-kpi"><div class="kpi-title" data-i18n="kpi_2_title">Гаранция</div><div class="kpi-value" data-i18n="kpi_2">24 месеца</div></div>
+        <div class="hero-kpi"><div class="kpi-title" data-i18n="kpi_3_title">Отговор до</div><div class="kpi-value" data-i18n="kpi_3">24 часа</div></div>
+        <div class="hero-kpi"><div class="kpi-title" data-i18n="kpi_4_title">Локация</div><div class="kpi-value" data-i18n="kpi_4">Варна • България</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" role="main">
+    <!-- Services -->
+    <section id="services" class="section" aria-labelledby="services-title">
+      <h2 id="services-title" data-i18n="do_title">Какво правим</h2>
+      <p class="muted" data-i18n="do_intro">Пълен цикъл услуги за индустрията, офис и хотели – от проектиране до поддръжка.</p>
+      <div class="grid">
+        <article class="card"><h3 data-i18n="do_1_t">Електроинсталации</h3><p class="muted" data-i18n="do_1">Проектиране и изграждане на промишлени, корабни, офисни, хотелски и жилищни електроинсталации</p></article>
+        <article class="card"><h3 data-i18n="do_2_t">Контролни табла и MCC</h3><p class="muted" data-i18n="do_2">Изработка и монтаж на контролни табла и табла за управление (MCC)</p></article>
+        <article class="card"><h3 data-i18n="do_3_t">Главни разпределителни табла</h3><p class="muted" data-i18n="do_3">Проектиране и изграждане на главни разпределителни табла (ГРТ)</p></article>
+        <article class="card"><h3 data-i18n="do_4_t">Автоматизация</h3><p class="muted" data-i18n="do_4">Автоматизация на технологични процеси и внедряване на интелигентни системи за управление</p></article>
+        <article class="card"><h3 data-i18n="do_5_t">Модернизация</h3><p class="muted" data-i18n="do_5">Ремонт, модернизация и подмяна на остаряло оборудване</p></article>
+        <article class="card"><h3 data-i18n="do_6_t">Измервания и пуск</h3><p class="muted" data-i18n="do_6">Измервания, тестване и пуск в експлоатация на електрически съоръжения</p></article>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section class="section" aria-labelledby="why-title">
+      <h2 id="why-title" data-i18n="why_title">Защо PTG Engineering</h2>
+      <div class="grid">
+        <div class="card"><strong data-i18n="why_1_t">Инженерен подход</strong><p class="muted" data-i18n="why_1">Документация, стандарти и проследимост на всяка стъпка.</p></div>
+        <div class="card"><strong data-i18n="why_2_t">Качество на материалите</strong><p class="muted" data-i18n="why_2">Работа с доказани марки и сертифицирани компоненти.</p></div>
+        <div class="card"><strong data-i18n="why_3_t">Срок и безопасност</strong><p class="muted" data-i18n="why_3">Строго спазване на срокове и H&S процедури на обекта.</p></div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section" aria-labelledby="process-title">
+      <h2 id="process-title" data-i18n="process_title">Как работим</h2>
+      <div class="steps">
+        <div class="step"><div class="num">1</div><strong data-i18n="p1_t">Оглед и задание</strong><p class="muted" data-i18n="p1">Изясняваме нуждите, параметрите и сроковете.</p></div>
+        <div class="step"><div class="num">2</div><strong data-i18n="p2_t">Проектиране</strong><p class="muted" data-i18n="p2">Разработваме схема, спецификация и график.</p></div>
+        <div class="step"><div class="num">3</div><strong data-i18n="p3_t">Изпълнение</strong><p class="muted" data-i18n="p3">Доставка, монтаж и тестове на място.</p></div>
+        <div class="step"><div class="num">4</div><strong data-i18n="p4_t">Пуск и поддръжка</strong><p class="muted" data-i18n="p4">Пуск в експлоатация и последваща поддръжка.</p></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <h2 id="contact-title" data-i18n="contact_title">Контакти</h2>
+      <div class="contact">
+        <div class="card">
+          <p>📧 <a href="mailto:office@ptg-engineering.com">office@ptg-engineering.com</a></p>
+          <p>📞 <a href="tel:+359895292638" aria-label="Обадете се на +359 895 292 638">+359 895 292 638</a></p>
+          <p data-i18n="address">📍 Варна, България</p>
+          <div class="cta"><a class="btn btn-primary" href="mailto:office@ptg-engineering.com?subject=Запитване" data-i18n="cta_quote">Заяви оферта</a></div>
+        </div>
+        <div class="card">
+          <p class="muted" data-i18n="contact_note">Работим в цяла България. Свържете се за оглед на обекта и оферта.</p>
+          <iframe title="Map" aria-label="Карта" style="width:100%; height:220px; border:0; border-radius:12px" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1463.0!2d27.916!3d43.214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a454!2zVmFybmE!5e0!3m2!1sen!2sbg!4v0000"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> <span data-i18n="company_name">Пи Ти Джи Инженеринг ООД</span></footer>
+
+  <script>
+    (function(){
+      // i18n dictionary (no trailing commas for wider browser support)
+      var dict = {
+        bg: {
+          title: 'Пи Ти Джи Инженеринг ООД',
+          description: 'Пи Ти Джи Инженеринг ООД – електроинженеринг и автоматизация.',
+          og_title: 'Пи Ти Джи Инженеринг ООД',
+          og_description: 'Електроинженеринг и автоматизация.',
+          company_name: 'Пи Ти Джи Инженеринг ООД',
+          nav_services: 'Услуги',
+          nav_process: 'Процес',
+          nav_contact: 'Контакти',
+          hero_badge: 'Електроинженеринг и автоматизация',
+          hero_title: 'Електроинсталации, главни табла и автоматизация за индустрията',
+          hero_lead: 'Проектиране, изработка и пуск в експлоатация – от идея до работещо решение. Работим в промишлени, морски и административни обекти из цяла България.',
+          cta_quote: 'Заяви оферта',
+          cta_services: 'Виж услугите',
+          kpi_1_title: 'Работа под напрежение',
+          kpi_1: '0 инцидента',
+          kpi_2_title: 'Гаранция',
+          kpi_2: '24 месеца',
+          kpi_3_title: 'Отговор до',
+          kpi_3: '24 часа',
+          kpi_4_title: 'Локация',
+          kpi_4: 'Варна • България',
+          do_title: 'Какво правим',
+          do_intro: 'Пълен цикъл услуги за индустрията, офис и хотели – от проектиране до поддръжка.',
+          do_1_t: 'Електроинсталации',
+          do_1: 'Проектиране и изграждане на промишлени, корабни, офисни, хотелски и жилищни електроинсталации',
+          do_2_t: 'Контролни табла и MCC',
+          do_2: 'Изработка и монтаж на контролни табла и табла за управление (MCC)',
+          do_3_t: 'Главни разпределителни табла',
+          do_3: 'Проектиране и изграждане на главни разпределителни табла (ГРТ)',
+          do_4_t: 'Автоматизация',
+          do_4: 'Автоматизация на технологични процеси и внедряване на интелигентни системи за управление',
+          do_5_t: 'Модернизация',
+          do_5: 'Ремонт, модернизация и подмяна на остаряло оборудване',
+          do_6_t: 'Измервания и пуск',
+          do_6: 'Измервания, тестване и пуск в експлоатация на електрически съоръжения',
+          why_title: 'Защо PTG Engineering',
+          why_1_t: 'Инженерен подход',
+          why_1: 'Документация, стандарти и проследимост на всяка стъпка.',
+          why_2_t: 'Качество на материалите',
+          why_2: 'Работа с доказани марки и сертифицирани компоненти.',
+          why_3_t: 'Срок и безопасност',
+          why_3: 'Строго спазване на срокове и H&S процедури на обекта.',
+          process_title: 'Как работим',
+          p1_t: 'Оглед и задание',
+          p1: 'Изясняваме нуждите, параметрите и сроковете.',
+          p2_t: 'Проектиране',
+          p2: 'Разработваме схема, спецификация и график.',
+          p3_t: 'Изпълнение',
+          p3: 'Доставка, монтаж и тестове на място.',
+          p4_t: 'Пуск и поддръжка',
+          p4: 'Пуск в експлоатация и последваща поддръжка.',
+          contact_title: 'Контакти',
+          address: '📍 Варна, България',
+          contact_note: 'Работим в цяла България. Свържете се за оглед на обекта и оферта.'
+        },
+        en: {
+          title: 'PTG Engineering Ltd.',
+          description: 'PTG Engineering Ltd. – electrical engineering & automation.',
+          og_title: 'PTG Engineering Ltd.',
+          og_description: 'Electrical engineering & automation.',
+          company_name: 'PTG Engineering Ltd.',
+          nav_services: 'Services',
+          nav_process: 'Process',
+          nav_contact: 'Contact',
+          hero_badge: 'Electrical engineering & automation',
+          hero_title: 'Electrical installations, switchboards & automation for industry',
+          hero_lead: 'Design, fabrication and commissioning – from concept to production-ready solution. We operate nationwide in Bulgaria.',
+          cta_quote: 'Request a quote',
+          cta_services: 'Our services',
+          kpi_1_title: 'Live work safety',
+          kpi_1: '0 incidents',
+          kpi_2_title: 'Warranty',
+          kpi_2: '24 months',
+          kpi_3_title: 'Response within',
+          kpi_3: '24 hours',
+          kpi_4_title: 'Location',
+          kpi_4: 'Varna • Bulgaria',
+          do_title: 'What we do',
+          do_intro: 'End‑to‑end services for industry, offices and hotels – from design to maintenance.',
+          do_1_t: 'Electrical installations',
+          do_1: 'Design and construction of industrial, marine, office, hotel and residential electrical installations',
+          do_2_t: 'Control panels & MCC',
+          do_2: 'Manufacture and installation of control panels and motor control centers (MCC)',
+          do_3_t: 'Main distribution boards',
+          do_3: 'Design and construction of main distribution boards (MDB)',
+          do_4_t: 'Automation',
+          do_4: 'Automation of technological processes and implementation of intelligent control systems',
+          do_5_t: 'Modernization',
+          do_5: 'Repair, retrofit and replacement of outdated equipment',
+          do_6_t: 'Testing & commissioning',
+          do_6: 'Testing, measurement and commissioning of electrical systems',
+          why_title: 'Why PTG Engineering',
+          why_1_t: 'Engineering mindset',
+          why_1: 'Documentation, standards and traceability at every step.',
+          why_2_t: 'Quality components',
+          why_2: 'Trusted brands and certified parts only.',
+          why_3_t: 'Deadlines & safety',
+          why_3: 'Strict timeline adherence and site H&S procedures.',
+          process_title: 'How we work',
+          p1_t: 'Site survey & brief',
+          p1: 'We scope requirements, constraints and deadlines.',
+          p2_t: 'Design',
+          p2: 'We deliver schematics, BoM and timeline.',
+          p3_t: 'Execution',
+          p3: 'Procurement, installation and on‑site tests.',
+          p4_t: 'Commissioning & support',
+          p4: 'Commissioning and ongoing maintenance.',
+          contact_title: 'Contacts',
+          address: '📍 Varna, Bulgaria',
+          contact_note: 'We operate across Bulgaria. Get in touch for a site visit and quotation.'
+        }
+      };
+
+      var els = document.querySelectorAll('[data-i18n]');
+      var headEls = document.querySelectorAll('[data-i18n-head]');
+      var toggle = document.getElementById('langToggle');
+      var flagIcon = document.getElementById('flagIcon');
+      var langLabel = document.getElementById('langLabel');
+
+      var PREF_KEY = 'ptg-lang';
+      var current;
+      try {
+        current = localStorage.getItem(PREF_KEY);
+      } catch(e) { current = null; }
+      if (!current) {
+        var navLang = (navigator.language || '').toLowerCase();
+        current = navLang.indexOf('bg') === 0 ? 'bg' : 'en';
+      }
+
+      function applyHead(lang){
+        for (var i=0; i<headEls.length; i++){
+          var el = headEls[i];
+          var key = el.getAttribute('data-i18n-head');
+          var val = dict[lang][key];
+          if (val){
+            if (el.tagName === 'META') el.setAttribute('content', val);
+            else if (el.tagName === 'TITLE') el.textContent = val;
+          }
+        }
+      }
+
+      function apply(lang){
+        for (var i=0; i<els.length; i++){
+          var el = els[i];
+          var key = el.getAttribute('data-i18n');
+          var val = dict[lang][key];
+          if (typeof val === 'string') el.textContent = val;
+        }
+        applyHead(lang);
+        document.documentElement.setAttribute('lang', lang);
+        if (flagIcon) {
+          flagIcon.src = lang === 'bg' ? 'https://flagcdn.com/w20/bg.png' : 'https://flagcdn.com/w20/gb.png';
+          flagIcon.alt = lang === 'bg' ? 'Българско знаме' : 'UK flag';
+        }
+        if (langLabel) langLabel.textContent = (lang || '').toUpperCase();
+        if (toggle) toggle.setAttribute('aria-pressed', lang === 'bg' ? 'false' : 'true');
+        try { localStorage.setItem(PREF_KEY, lang); } catch(e){}
+      }
+
+      if (toggle) {
+        toggle.addEventListener('click', function(){
+          var next = current === 'bg' ? 'en' : 'bg';
+          apply(next);
+          current = next;
+        });
+      }
+
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      apply(current);
+    })();
+  </script>
+
+  <!-- Structured data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PTG Engineering Ltd.",
+    "alternateName": "Пи Ти Джи Инженеринг ООД",
+    "url": "https://ptg-engineering.com",
+    "logo": "https://ptg-engineering.com/logo.png",
+    "email": "office@ptg-engineering.com",
+    "telephone": "+359895292638",
+    "address": {"@type": "PostalAddress","addressLocality": "Varna","addressCountry": "BG"}
+  }
+  </script>
+</body>
+</html>
