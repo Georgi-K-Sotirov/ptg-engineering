@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const headerHeight = header ? header.offsetHeight : 72;
 
         const observerOptions = {
-            rootMargin: -${headerHeight}px 0px -85% 0px,
+            rootMargin: `-${headerHeight}px 0px -85% 0px`,
             threshold: 0
         };
         
@@ -89,4 +89,45 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setupScrollSpy();
+    // Contact form success message (Google Forms + hidden iframe)
+    const contactForm = document.getElementById('contactForm');
+    const contactIframe = document.getElementById('hidden_iframe');
+    const contactSuccess = document.getElementById('contactSuccess');
+
+    if (contactForm && contactIframe && contactSuccess) {
+        let contactSubmitted = false;
+
+        contactForm.addEventListener('submit', () => {
+            contactSubmitted = true;
+
+            const btn = contactForm.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-70', 'cursor-not-allowed');
+                btn.dataset.oldText = btn.textContent;
+                btn.textContent = 'Изпращане...';
+            }
+        });
+
+        contactIframe.addEventListener('load', () => {
+            if (!contactSubmitted) return; // ignore initial iframe load
+
+            contactSuccess.classList.remove('hidden');
+            contactForm.reset();
+
+            const btn = contactForm.querySelector('button[type="submit"]');
+            if (btn) {
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+                btn.textContent = btn.dataset.oldText || 'ИЗПРАЩАНЕ';
+            }
+
+            contactSubmitted = false;
+
+            // optional: auto-hide after 6 seconds
+            setTimeout(() => {
+                contactSuccess.classList.add('hidden');
+            }, 6000);
+        });
+    }
 });
