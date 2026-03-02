@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const headerHeight = header ? header.offsetHeight : 72;
 
         const observerOptions = {
-            rootMargin: `-${headerHeight}px 0px -85% 0px`,
+            rootMargin: -${headerHeight}px 0px -85% 0px,
             threshold: 0
         };
         
