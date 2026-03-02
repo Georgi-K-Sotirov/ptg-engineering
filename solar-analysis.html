@@ -5,63 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Безплатен соларен анализ | PTG Engineering</title>
   <meta name="description" content="Безплатно изчисляване на очакваното производство на фотоволтаична система чрез професионален инженерен софтуер. Изпратете адрес и получете прогноза за годишни kWh и препоръчителна мощност." />
-  <link rel="icon" type="image/x-icon" href="/images/logo.png">  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/index.css">
 
-  <style>
-    body { font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-  </style>
+    <!-- Meta Pixel Code -->
+    <script>
+       !function(f,b,e,v,n,t,s)
+       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+       n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+       if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+       n.queue=[];t=b.createElement(e);t.async=!0;
+       t.src=v;s=b.getElementsByTagName(e)[0];
+       s.parentNode.insertBefore(t,s)}(window, document,'script',
+       'https://connect.facebook.net/en_US/fbevents.js');
+       fbq('init', '1574698623783043');
+       fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+       src="https://www.facebook.com/tr?id=1574698623783043&ev=PageView&noscript=1"
+       /></noscript>
+    <!-- End Meta Pixel Code -->
 
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1574698623783043');
-    fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1574698623783043&ev=PageView&noscript=1"
-  /></noscript>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-250J7130JB"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-250J7130JB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-250J7130JB');
-  </script>
+       gtag('config', 'G-250J7130JB');
+    </script>
 </head>
 
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Top bar -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
-    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html#home" class="flex items-center gap-2">
-        <img src="images/logo.png" alt="PTG Logo" class="h-10">
-        <span class="text-xl md:text-2xl font-light text-gray-700 tracking-wider"><b>ENGINEERING</b></span>
-      </a>
-      <div class="flex items-center gap-3">
-        <a href="tel:+359895292638" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-300 hover:border-blue-500 hover:text-blue-600 transition">
-          <i class="fa-solid fa-phone"></i><span>Обадете се</span>
-        </a>
-        <a href="https://wa.me/359895292638" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-white font-semibold hover:opacity-90 transition" style="background-color:#25D366">
-          <i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </header>
+     <header class="site-header shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#home" class="flex items-center space-x-2">
+                    <img src="images/logo.png" alt="PTG Logo" class="h-10">
+                    <span class="text-2xl font-light text-gray-700 tracking-wider"><b>ENGINEERING</b></span>
+                </a>
+                <div class="flex items-center">
+                    <nav class="hidden md:flex items-center space-x-8">
+                        <a href="#home" class="nav-link text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Начало</a>
+                        <a href="#services" class="nav-link text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Услуги</a>
+                        <a href="solar-analysis.html" class="nav-link text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Безплатен соларен анализ</a>
+                        <a href="#about" class="nav-link text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">За нас</a>
+                        <a href="#how-it-works" class="nav-link text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Как работим</a>
+                        <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500 transition-colors duration-300 font-medium">Контакти</a>
+                    </nav>
 
+
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Начало</a>
+                    <a href="#services" class="nav-link text-gray-600 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Услуги</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">За нас</a>
+                    <a href="#how-it-works" class="nav-link text-gray-600 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Как работим</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-blue-500 block px-3 py-2 rounded-md text-base font-medium">Контакти</a>
+                </div>
+                 <div class="border-t border-gray-200 mt-2 pt-2 flex justify-center space-x-4 pb-3">
+                    <a href="index.html" class="lang-switcher-btn active font-medium">BG</a>
+                    <span class="text-gray-400">|</span>
+                    <a href="en.html" class="lang-switcher-btn font-medium text-gray-600 hover:text-blue-500">EN</a>
+                </div>
+            </div>
+        </header>
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-blue-700 via-blue-600 to-cyan-500"></div>
@@ -107,6 +134,22 @@
           <p class="mt-6 text-white/80 text-sm">
             * За анализ са нужни адрес/локация и ориентировъчна консумация (ако я имате).
           </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+
+              <a href="tel:+359895292638"
+                 class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full border border-white text-white font-semibold hover:bg-white hover:text-blue-600 transition">
+                  <i class="fa-solid fa-phone"></i>
+                  Обадете се
+              </a>
+
+              <a href="https://wa.me/359895292638"
+                 class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full text-white font-semibold transition"
+                 style="background-color:#25D366">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  WhatsApp
+              </a>
+
+            </div>
         </div>
 
         <!-- Form card -->
@@ -230,24 +273,70 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#1a1a1a] text-gray-400 py-10 border-t border-gray-800">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-        <div class="text-sm">
-          <div class="text-gray-200 font-semibold">PTG Engineering</div>
-          <div class="mt-1">Ванра, България • <a class="hover:text-white" href="mailto:office@ptg-engineering.com">office@ptg-engineering.com</a></div>
+    <footer class="bg-[#1a1a1a] text-gray-400 py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Бързи връзки</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li><a href="#home" class="hover:text-white transition-colors">Начало</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Услуги</a></li>
+                        <li><a href="solar-analysis.html" class="hover:text-white transition-colors">Безплатен соларен анализ</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">За нас</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Контакти</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Контакти</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                            <span>+359 895 292 638</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-xs"></i>
+                            <a href="mailto:office@ptg-engineering.com" class="hover:text-white transition-colors">office@ptg-engineering.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-xs"></i>
+                            <span>гр. Варна, 9000, България</span>
+                        </li>
+                    </ul>
+                    <div class="flex gap-4 mt-8">
+                        <a href="https://www.facebook.com/profile.php?id=100095033298571" target="_blank" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                            <i class="fa-brands fa-facebook-f text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ptg_engineering/" target="_blank" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all">
+                            <i class="fa-brands fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Opening Hours -->
+                <div>
+                    <h3 class="text-white text-sm font-bold uppercase tracking-widest mb-6">Работно време</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex items-start gap-3">
+                            <i class="fa-regular fa-clock mt-1 text-xs"></i>
+                            <div>
+                                <p class="font-semibold text-gray-300">Часове:</p>
+                                <p class="mt-1">Пон - Пет: 09:00 - 17:30</p>
+                                <p>Съб: 09:00 - 14:30</p>
+                                <p>Нед: Затворено</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center text-xs tracking-wider">
+                <p>&copy; 2024 Пи Ти Джи Инженеринг ООД. Всички права запазени.</p>
+            </div>
         </div>
-        <div class="flex gap-3">
-          <a href="tel:+359895292638" class="px-4 py-2 rounded-full border border-gray-700 hover:border-gray-500 hover:text-white transition">Обадете се</a>
-          <a href="https://wa.me/359895292638" class="px-4 py-2 rounded-full text-white font-semibold hover:opacity-90 transition" style="background-color:#25D366">WhatsApp</a>
-          <a href="index.html" class="px-4 py-2 rounded-full border border-gray-700 hover:border-gray-500 hover:text-white transition">Основен сайт</a>
-        </div>
-      </div>
-      <div class="pt-6 mt-6 border-t border-gray-800 text-center text-xs tracking-wider">
-        <p>&copy; 2024 PTG Engineering Ltd. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
 </body>
 </html>
